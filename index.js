@@ -9,7 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 
 const PRIVATE_APP_ACCESS = process.env.PRIVATE_APP_ACCESS_TOKEN;
 
-// 1. Homepage: List Companies
 app.get("/", async (req, res) => {
   const companiesUrl =
     "https://api.hubapi.com/crm/v3/objects/companies?properties=name,domain,description";
@@ -27,12 +26,10 @@ app.get("/", async (req, res) => {
   }
 });
 
-// 2. GET: Form to add Company
 app.get("/update-cobj", (req, res) => {
   res.render("updates", { title: "Update Company | HubSpot Practicum" });
 });
 
-// 3. POST: Create Company
 app.post("/update-cobj", async (req, res) => {
   const newCompany = {
     properties: {
