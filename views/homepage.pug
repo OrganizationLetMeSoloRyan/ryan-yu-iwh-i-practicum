@@ -1,0 +1,21 @@
+doctype html
+html 
+    head 
+        title= title
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        .container
+            h1 Companies
+            a.btn(href="/update-cobj") Add to this table
+            table
+                thead
+                    tr
+                        th Name
+                        th Domain
+                        th Description
+                tbody
+                    each company in data
+                        tr
+                            td #{company.properties.name}
+                            td #{company.properties.domain}
+                            td #{company.properties.description}

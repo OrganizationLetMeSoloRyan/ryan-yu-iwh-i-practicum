@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .container
+            h1 New Company Record
+            a(href="/") Return to the homepage
+            br
+            br
+            form(method="POST")
+                label Name
+                input(type="text" name="name" required)
+                label Domain
+                input(type="text" name="domain" placeholder="example.com" required)
+                label Description
+                textarea(name="description" rows="3")
+                input(type="submit" value="Create Company")
